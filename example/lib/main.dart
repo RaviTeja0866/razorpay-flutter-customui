@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:razorpay_flutter_customui_example/payment_slection_page.dart';
 import 'package:razorpay_flutter_customui_example/sdk_initilize_dialog.dart';
 
 void main() {
@@ -102,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                         child: Text('Purchase'),
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.green,
+                          backgroundColor: Colors.green,
                         ),
                       )
                     ],

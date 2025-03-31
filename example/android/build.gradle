@@ -1,27 +1,31 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0'
+        // Update to a Gradle Plugin version compatible with Gradle 8.5
+        classpath 'com.android.tools.build:gradle:8.0.0'  // Android Gradle Plugin 8.x
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10'  // Kotlin 1.8.x
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
-rootProject.buildDir = '../build'
+rootProject.buildDir = "../build"
+
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
+
 subprojects {
-    project.evaluationDependsOn(':app')
+    project.evaluationDependsOn(":app")
 }
 
 tasks.register("clean", Delete) {
